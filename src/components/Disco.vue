@@ -21,6 +21,7 @@ export default {
     padding: 10px;
     height: 335px;
     background-color: $mainColor;
+    cursor: pointer;
 
     img {
         width: 150px;
@@ -32,7 +33,7 @@ export default {
         font-size: 16px;
         text-transform: uppercase;
         text-align: center;
-        color: white;
+        color: $lightText;
     }
 
     p {

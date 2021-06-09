@@ -1,6 +1,6 @@
 <template>
     <main>
-        <div class="container">
+        <div class="container" v-if="!loading">
             <div class="row">
                 <div v-for="element, index in arrayDisco" :key="index" 
                 class="col-xs-6 col-md-4 col-lg-2">
@@ -8,22 +8,26 @@
                 </div>
             </div>
         </div>
+        <Loading v-else />
     </main>
 </template>
 
 <script>
 import Disco from './Disco.vue';
 import axios from 'axios';
+import Loading from './Loading.vue';
 
 export default {
     name: "RaccoltaDischi",
     components: {
-        Disco
+        Disco,
+        Loading
     },
     data: function(){
         return{
             apiUrl:"https://flynn.boolean.careers/exercises/api/array/music",
-            arrayDisco: []
+            arrayDisco: [],
+            loading: true
         }
     },
     created: function(){
@@ -33,6 +37,7 @@ export default {
                 //console.log(result.data.response);
                 this.arrayDisco = result.data.response;
                 console.log(this.arrayDisco);
+                this.loading = false;
             });
     }
 }
@@ -45,5 +50,8 @@ main {
     width: 100%;
     min-height: calc(100vh - 80px);
     background-color: $bgColor;
+}
+.container {
+    padding-bottom: 24px;
 }
 </style>

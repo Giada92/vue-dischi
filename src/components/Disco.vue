@@ -21,8 +21,14 @@ export default {
     padding: 10px;
     max-width: 200px;
     height: 300px;
+    /* box-shadow: 0 4px 2px 5px rgba(#FFFF, 0.15); */
     background-color: $mainColor;
     cursor: pointer;
+
+    &:hover {
+        animation: scale 2s linear infinite;
+        border: 1px solid #1ED760;
+    }
 
     img {
         width: 150px;
@@ -31,7 +37,7 @@ export default {
 
     h4 {
         margin-bottom: 15px;
-        font-size: 16px;
+        font-size: 18px;
         text-transform: uppercase;
         text-align: center;
         color: $lightText;
@@ -40,6 +46,15 @@ export default {
     p {
         margin: 0;
         color: #66635D;
+    }
+}
+
+@keyframes scale {
+    to { 
+        transform: scale(1); 
+    }
+    from { 
+        transform: scale(1.05); 
     }
 }
 </style>

@@ -1,16 +1,22 @@
 <template>
   <div id="app">
-    <div>Qualcosa</div>
+    <!-- Intestazione pagina -->
+    <Header />
+    <!-- /Intestazione pagina -->
+
+    <!-- Main -->
+    <!-- /Main -->
+
   </div>
 </template>
 
 <script>
-
+import Header from './components/Header.vue';
 
 export default {
   name: 'App',
   components: {
-    
+    Header,
   }
 }
 </script>

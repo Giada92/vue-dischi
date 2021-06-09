@@ -1,0 +1,22 @@
+//variabili per i colori principali
+$mainColor: #2E3A46;
+$bgColor: #1E2D3B;
+
+//import del font
+@import "~@fontsource/roboto/index.css";
+@import "~@fontsource/roboto/400.css";
+@import "~@fontsource/roboto/700.css";
+
+//import bootstrap
+@import '~bootstrap/scss/bootstrap.scss';
+
+//stili generali della pagina
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto';
+}

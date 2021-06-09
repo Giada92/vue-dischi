@@ -19,7 +19,8 @@ export default {
 
 .wrappre_disco{
     padding: 10px;
-    height: 335px;
+    max-width: 200px;
+    height: 300px;
     background-color: $mainColor;
     cursor: pointer;
 

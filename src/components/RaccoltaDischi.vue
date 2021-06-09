@@ -3,7 +3,7 @@
         <div class="container" v-if="!loading">
             <div class="row">
                 <div v-for="element, index in arrayDisco" :key="index" 
-                class="col-xs-6 col-md-4 col-lg-2">
+                class="col-xs col-sm-6 col-md-4 col-lg-2">
                     <Disco :items="element" />
                 </div>
             </div>
@@ -49,9 +49,7 @@ export default {
 main {
     width: 100%;
     min-height: calc(100vh - 80px);
+    padding: 30px 0;
     background-color: $bgColor;
-}
-.container {
-    padding-bottom: 24px;
 }
 </style>

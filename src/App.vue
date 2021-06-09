@@ -5,6 +5,7 @@
     <!-- /Intestazione pagina -->
 
     <!-- Main -->
+    <RaccoltaDischi />
     <!-- /Main -->
 
   </div>
@@ -12,11 +13,13 @@
 
 <script>
 import Header from './components/Header.vue';
+import RaccoltaDischi from './components/RaccoltaDischi.vue';
 
 export default {
   name: 'App',
   components: {
     Header,
+    RaccoltaDischi
   }
 }
 </script>

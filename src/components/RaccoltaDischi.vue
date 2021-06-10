@@ -33,7 +33,7 @@ export default {
             apiUrl:"https://flynn.boolean.careers/exercises/api/array/music",
             arrayDisco: [],
             loading: true,
-            genere: ""
+            genere: "All"
         }
     },
     computed: {
@@ -54,12 +54,12 @@ export default {
         }
     },
     methods:{
-        cambiaFunzione: function(newSelected){
-            //console.log(newSelected);
-            //console.log(newSelected);
-            this.genere = newSelected;
+        cambiaFunzione: function(newOptions){
+            console.log(newOptions);
+            //console.log(newOptions);
+            this.genere = newOptions;
             console.log("Genere importato dal figlio", this.genere);
-            console.log("tutti i dischi", this.arrayDisco);
+            //console.log("tutti i dischi", this.arrayDisco);
             //this.arrayGeneri = newSelected;
             //console.log(this.arrayGeneri);
         }

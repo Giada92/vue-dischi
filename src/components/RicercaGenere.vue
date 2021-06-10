@@ -18,7 +18,7 @@ export default {
     name: "RicercaGenere",
     data: function(){
         return {
-            selected: "",
+            selected: "All",
             options: [
             { 
                 text: 'Tutti i Generi', 

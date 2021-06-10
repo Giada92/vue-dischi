@@ -21,7 +21,6 @@ export default {
     padding: 10px;
     max-width: 200px;
     height: 300px;
-    /* box-shadow: 0 4px 2px 5px rgba(#FFFF, 0.15); */
     background-color: $mainColor;
     cursor: pointer;
 

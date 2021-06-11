@@ -1,59 +1,36 @@
 <template>
-    <div class="wrappre_disco d-flex flex-column justify-content-center align-items-center mt-4">
-        <img class="img-fluid mb-2" :src="items.poster" :alt="items.title">
-        <h4 class="fw-bold">{{items.title}}</h4>
-        <p>{{items.author}}</p>
-        <p>{{items.year}}</p>
+    <div class="card mx-2 mb-3 p-3 text-center">
+        <img class="mb-3" :src="item.poster" :alt="item.title">
+        <h4 class="text-uppercase mb-3">{{ item.title }}</h4>
+        <h5>{{ item.author }}</h5>
+        <h5>{{ item.year }}</h5>
     </div>
 </template>
 
 <script>
 export default {
     name: "Disco",
-    props: [ "items"]
+    props: {
+        item : Object
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 @import '../style/general.scss';
 
-.wrappre_disco{
-    padding: 10px;
-    max-width: 200px;
-    height: 300px;
+.card {
+    width: calc(100% / 5 - 30px);
     background-color: $mainColor;
-    cursor: pointer;
-
-    &:hover {
-        animation: scale 2s linear infinite;
-        border: 1px solid #1ED760;
-    }
-
-    img {
-        width: 150px;
-        height: 160px;
-    }
 
     h4 {
-        margin-bottom: 15px;
         font-size: 18px;
-        text-transform: uppercase;
-        text-align: center;
-        color: $lightText;
+        color: white;
     }
 
-    p {
-        margin: 0;
-        color: #66635D;
-    }
-}
-
-@keyframes scale {
-    to { 
-        transform: scale(1); 
-    }
-    from { 
-        transform: scale(1.05); 
+    h5 {
+        font-size: 18px;
+        color:gray;
     }
 }
 </style>

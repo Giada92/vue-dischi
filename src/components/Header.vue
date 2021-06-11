@@ -1,12 +1,42 @@
 <template>
-  <header class="container-fluid">
-      <img src="../assets/spotify.png" alt="Logo spotify">
-  </header>
+    <header class="d-flex justify-content-between px-3">
+        <div>
+            <img src="../assets/spotify.png" alt="Logo Spotify">
+        </div>
+        <div>
+            <select v-model="genereSelezionato" @change="$emit('cambiaGenere', genereSelezionato)">
+                <option value="" >Selezione un genere</option>
+                <option 
+                :value="genere"
+                v-for="genere, index in generi" :key="index">
+                    {{ genere }}
+                </option>
+            </select>
+
+            <select class="mx-3" v-model="artistaSelezionato" @change="$emit('cambiaArtista', artistaSelezionato)">
+                <option value="">Selezione per Artista</option>
+                <option v-for="artista, index in artisti" :key="index" 
+                :value="artista">
+                    {{ artista }}
+                </option>
+            </select>
+        </div>
+    </header>
 </template>
 
 <script>
 export default {
-    name: "Header"
+    name:"Header",
+    data(){
+        return{
+            genereSelezionato: "",
+            artistaSelezionato: ""
+        }
+    },
+    props: {
+        generi: Array,
+        artisti: Array
+    }
 }
 </script>
 
@@ -19,8 +49,8 @@ header {
     background-color: $mainColor;
 
     img {
-        height: 80%;
-        vertical-align: middle;
+        width: 50px;
     }
 }
+
 </style>

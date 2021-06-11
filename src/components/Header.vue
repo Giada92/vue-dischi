@@ -5,7 +5,7 @@
         </div>
         <div>
             <select v-model="genereSelezionato" @change="$emit('cambiaGenere', genereSelezionato)">
-                <option value="" >Selezione un genere</option>
+                <option value="" >Seleziona un genere</option>
                 <option 
                 :value="genere"
                 v-for="genere, index in generi" :key="index">

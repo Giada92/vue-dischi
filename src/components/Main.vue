@@ -1,5 +1,5 @@
 <template>
-  <main class="container">
+  <main v-if="!loading" class="container">
       <div class="cards d-flex flex-wrap mt-3">
           <Disco 
             v-for="arrayDisco, index in filtraGenereArtista" :key="index"
@@ -7,10 +7,12 @@
             />
       </div>
   </main>
+  <Loading v-else />
 </template>
 
 <script>
 import Disco from './Disco.vue';
+import Loading from './Loading.vue';
 
 import axios from 'axios';
 
@@ -25,7 +27,8 @@ export default {
             apiUrl: "https://flynn.boolean.careers/exercises/api/array/music",
             arrayDischi: [],
             arrayGeneri: [],
-            arrayArtisti: []
+            arrayArtisti: [],
+            loading: true
         }
     },
     computed:{
@@ -50,7 +53,8 @@ export default {
         }
     },
     components: {
-        Disco
+        Disco,
+        Loading
     },
     created(){
         axios.
@@ -58,6 +62,11 @@ export default {
                 .then((result)=> {
                     this.arrayDischi  = result.data.response;
                     //console.log(this.arrayDischi);
+                    setInterval(
+                        ()=>{ 
+                            this.loading = false;
+                        }, 3000);
+
                     this.arrayDischi.forEach(
                         (element) => {
                             //console.log(element);
